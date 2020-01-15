@@ -88,6 +88,88 @@
 			"response": []
 		},
 		{
+			"name": "02 - Create Index - Challenge 3",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "{{env_search_api_key}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fields\": [\r\n    {\r\n      \"name\": \"id\",\r\n      \"type\": \"Edm.String\",\r\n      \"key\": true,\r\n      \"searchable\": true,\r\n      \"filterable\": true,\r\n      \"facetable\": false,\r\n      \"sortable\": true\r\n    },\r\n    {\r\n      \"name\": \"url\",\r\n      \"type\": \"Edm.String\",\r\n      \"sortable\": true,\r\n      \"searchable\": true,\r\n      \"filterable\": true,\r\n      \"facetable\": true\r\n    },\r\n    {\r\n      \"name\": \"file_name\",\r\n      \"type\": \"Edm.String\",\r\n      \"searchable\": true,\r\n      \"sortable\": true,\r\n      \"filterable\": true,\r\n      \"facetable\": true\r\n    },\r\n    {\r\n      \"name\": \"content\",\r\n      \"type\": \"Edm.String\",\r\n      \"searchable\": true,\r\n      \"sortable\": false,\r\n      \"filterable\": true,\r\n      \"facetable\": true\r\n    },\r\n        {\r\n      \"name\": \"size\",\r\n      \"type\": \"Edm.Int64\",\r\n      \"searchable\": false,\r\n      \"sortable\": true,\r\n      \"filterable\": true,\r\n      \"facetable\": true\r\n    },\r\n        {\r\n      \"name\": \"last_modified\",\r\n      \"type\": \"Edm.DateTimeOffset\",\r\n      \"searchable\": false,\r\n      \"sortable\": false,\r\n      \"filterable\": true,\r\n      \"facetable\": true\r\n    },\r\n    {\r\n      \"name\": \"persons\",\r\n      \"type\": \"Collection(Edm.String)\",\r\n      \"searchable\": true,\r\n      \"sortable\": false,\r\n      \"filterable\": true,\r\n      \"facetable\": true\r\n    },\r\n    {\r\n      \"name\": \"key_phrases\",\r\n      \"type\": \"Collection(Edm.String)\",\r\n      \"searchable\": true,\r\n      \"sortable\": false,\r\n      \"filterable\": true,\r\n      \"facetable\": true\r\n    },\r\n    {\r\n      \"name\": \"locations\",\r\n      \"type\": \"Collection(Edm.String)\",\r\n      \"searchable\": true,\r\n      \"sortable\": false,\r\n      \"filterable\": true,\r\n      \"facetable\": true\r\n    },\r\n    {\r\n      \"name\": \"sentiment\",\r\n      \"type\": \"Edm.Double\",\r\n      \"searchable\": false,\r\n      \"sortable\": true,\r\n      \"filterable\": true,\r\n      \"facetable\": false\r\n    }\r\n    \r\n  ]\r\n}"
+				},
+				"url": {
+					"raw": "https://{{search_service}}.search.windows.net/indexes/{{index_test}}?api-version=2019-05-06-Preview",
+					"protocol": "https",
+					"host": [
+						"{{search_service}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"{{index_test}}"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2019-05-06-Preview"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "02 - Update Index - Challenge 3",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "{{env_search_api_key}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fields\": [\r\n    {\r\n      \"name\": \"id\",\r\n      \"type\": \"Edm.String\",\r\n      \"key\": true,\r\n      \"searchable\": true,\r\n      \"filterable\": true,\r\n      \"facetable\": false,\r\n      \"sortable\": true\r\n    },\r\n    {\r\n      \"name\": \"url\",\r\n      \"type\": \"Edm.String\",\r\n      \"sortable\": true,\r\n      \"searchable\": true,\r\n      \"filterable\": true,\r\n      \"facetable\": true\r\n    },\r\n    {\r\n      \"name\": \"file_name\",\r\n      \"type\": \"Edm.String\",\r\n      \"searchable\": true,\r\n      \"sortable\": true,\r\n      \"filterable\": true,\r\n      \"facetable\": true\r\n    },\r\n    {\r\n      \"name\": \"content\",\r\n      \"type\": \"Edm.String\",\r\n      \"searchable\": true,\r\n      \"sortable\": false,\r\n      \"filterable\": true,\r\n      \"facetable\": true\r\n    },\r\n        {\r\n      \"name\": \"size\",\r\n      \"type\": \"Edm.Int64\",\r\n      \"searchable\": false,\r\n      \"sortable\": true,\r\n      \"filterable\": true,\r\n      \"facetable\": true\r\n    },\r\n        {\r\n      \"name\": \"last_modified\",\r\n      \"type\": \"Edm.DateTimeOffset\",\r\n      \"searchable\": false,\r\n      \"sortable\": false,\r\n      \"filterable\": true,\r\n      \"facetable\": true\r\n    },\r\n    {\r\n      \"name\": \"persons\",\r\n      \"type\": \"Collection(Edm.String)\",\r\n      \"searchable\": true,\r\n      \"sortable\": false,\r\n      \"filterable\": true,\r\n      \"facetable\": true\r\n    },\r\n    {\r\n      \"name\": \"key_phrases\",\r\n      \"type\": \"Collection(Edm.String)\",\r\n      \"searchable\": true,\r\n      \"sortable\": false,\r\n      \"filterable\": true,\r\n      \"facetable\": true\r\n    },\r\n    {\r\n      \"name\": \"locations\",\r\n      \"type\": \"Collection(Edm.String)\",\r\n      \"searchable\": true,\r\n      \"sortable\": false,\r\n      \"filterable\": true,\r\n      \"facetable\": true\r\n    },\r\n    {\r\n      \"name\": \"sentiment\",\r\n      \"type\": \"Edm.Double\",\r\n      \"searchable\": false,\r\n      \"sortable\": true,\r\n      \"filterable\": true,\r\n      \"facetable\": false\r\n    }\r\n    \r\n  ]\r\n}"
+				},
+				"url": {
+					"raw": "https://{{search_service}}.search.windows.net/indexes/{{index_test}}?api-version=2019-05-06-Preview",
+					"protocol": "https",
+					"host": [
+						"{{search_service}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"{{index_test}}"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2019-05-06-Preview"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "03 - Create a skillset",
 			"request": {
 				"method": "PUT",
@@ -117,6 +199,47 @@
 					"path": [
 						"skillsets",
 						"{{index_name}}-skillset"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2019-05-06-Preview"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "03 - Create a skillset - OpenHack CHallenge 3",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "{{env_search_api_key}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"description\": \"Extract entities, detect language and extract key-phrases\",\r\n  \"cognitiveServices\": {\r\n    \t\"@odata.type\": \"#Microsoft.Azure.Search.CognitiveServicesByKey\",\r\n    \t\"description\": \"mycogsvcs-airlift\",\r\n    \t\"key\": \"{{cog_services_key}}\"\r\n  },\r\n  \"skills\":\r\n  [\r\n  \t{\r\n      \"@odata.type\": \"#Microsoft.Skills.Text.EntityRecognitionSkill\",\r\n      \"categories\": [ \"Person\", \"Location\", \"URL\" ],\r\n      \"defaultLanguageCode\": \"en\",\r\n      \"inputs\": [\r\n        { \"name\": \"text\", \"source\": \"/document/content\" }\r\n      ],\r\n      \"outputs\": [\r\n        { \"name\": \"persons\", \"targetName\": \"persons\" },\r\n        { \"name\": \"locations\", \"targetName\": \"locations\" },\r\n        { \"name\": \"urls\", \"targetName\": \"urls\" }\r\n      ]\r\n    },\r\n    {\r\n      \"@odata.type\": \"#Microsoft.Skills.Text.KeyPhraseExtractionSkill\",\r\n      \"inputs\": [\r\n        {\r\n          \"name\": \"text\",\r\n          \"source\": \"/document/content\"\r\n        }\r\n      ],\r\n      \"outputs\": [\r\n        {\r\n          \"name\": \"keyPhrases\",\r\n          \"targetName\": \"keyPhrases\"\r\n        }\r\n      ]\r\n\t}\r\n  ]\r\n}"
+				},
+				"url": {
+					"raw": "https://{{search_service}}.search.windows.net/skillsets/{{index_test}}-skillset?api-version=2019-05-06-Preview",
+					"protocol": "https",
+					"host": [
+						"{{search_service}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"skillsets",
+						"{{index_test}}-skillset"
 					],
 					"query": [
 						{
@@ -170,7 +293,7 @@
 			"response": []
 		},
 		{
-			"name": "04 - Create Indexer Copy",
+			"name": "04 - Create Indexer - Challenge 2",
 			"request": {
 				"method": "PUT",
 				"header": [
@@ -211,7 +334,86 @@
 			"response": []
 		},
 		{
+			"name": "04 - Create Indexer - Challenge 3",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "{{env_search_api_key}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dataSourceName\" : \"{{index_name}}-datasource\",\r\n  \"targetIndexName\" : \"{{index_test}}\",\r\n  \"skillsetName\" : \"{{index_test}}-skillset\",\r\n  \"fieldMappings\" : [\r\n        {\r\n          \"sourceFieldName\" : \"metadata_storage_path\",\r\n          \"targetFieldName\" : \"id\",\r\n          \"mappingFunction\" : { \"name\" : \"base64Encode\" }\r\n        },\r\n        {\r\n        \t\"sourceFieldName\": \"metadata_storage_path\",\r\n        \t\"targetFieldName\": \"url\"\r\n        },\r\n        {\r\n        \t\"sourceFieldName\": \"metadata_storage_name\",\r\n        \t\"targetFieldName\": \"file_name\"\r\n        },\r\n        {\r\n        \t\"sourceFieldName\": \"metadata_storage_size\",\r\n        \t\"targetFieldName\": \"size\"\r\n        },\r\n        {\r\n        \t\"sourceFieldName\": \"metadata_storage_last_modified\",\r\n        \t\"targetFieldName\": \"last_modified\"\r\n        }\r\n        \r\n   ],\r\n   \"outputFieldMappings\" : \r\n\t[\r\n        {\r\n    \t \"sourceFieldName\" : \"/document/persons\",\r\n    \t \"targetFieldName\" : \"persons\"\r\n    \t},\r\n    \t{\r\n    \t  \"sourceFieldName\" : \"/document/locations\",\r\n\t      \"targetFieldName\" : \"locations\"\r\n    \t},\r\n    \t{\r\n    \t  \"sourceFieldName\" : \"/document/urls\",\r\n\t      \"targetFieldName\" : \"urls\"\r\n    \t},\r\n    \t{\r\n    \t  \"sourceFieldName\" : \"/document/keyPhrases\",\r\n\t      \"targetFieldName\" : \"key_phrases\"\r\n    \t}\r\n    ],\r\n  \"parameters\":\r\n  {\r\n\t\"batchSize\": 1,\r\n  \t\"maxFailedItems\":-1,\r\n  \t\"maxFailedItemsPerBatch\":-1\r\n  }\r\n}"
+				},
+				"url": {
+					"raw": "https://{{search_service}}.search.windows.net/indexers/{{index_test}}-indexer?api-version=2019-05-06-Preview",
+					"protocol": "https",
+					"host": [
+						"{{search_service}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexers",
+						"{{index_test}}-indexer"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2019-05-06-Preview"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "05 - Check Indexer Status",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "{{env_search_api_key}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://{{search_service}}.search.windows.net/indexers/{{index_name}}-indexer/status?api-version=2019-05-06-Preview",
+					"protocol": "https",
+					"host": [
+						"{{search_service}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexers",
+						"{{index_name}}-indexer",
+						"status"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2019-05-06-Preview"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "05 - Check Indexer Status Challenge 3",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -384,6 +586,59 @@
 					"path": [
 						"indexes",
 						"{{index_name}}",
+						"docs",
+						"search"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "New York",
+							"disabled": true
+						},
+						{
+							"key": "api-version",
+							"value": "2019-05-06"
+						},
+						{
+							"key": "select",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "06 - Search the Index - Question 4.1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "{{env_search_api_key}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n     \"count\": true,  \r\n     \"search\": \"https\",  \r\n     \"searchFields\": \"content, url, urls\",  \r\n     \"searchMode\": \"all\",  \r\n     \"select\": \"file_name, size, last_modified, url, persons, locations, urls\"\r\n}"
+				},
+				"url": {
+					"raw": "https://{{search_service}}.search.windows.net/indexes/{{index_test}}/docs/search?api-version=2019-05-06",
+					"protocol": "https",
+					"host": [
+						"{{search_service}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"{{index_test}}",
 						"docs",
 						"search"
 					],
