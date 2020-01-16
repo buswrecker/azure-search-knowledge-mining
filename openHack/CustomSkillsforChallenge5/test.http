@@ -1,0 +1,19 @@
+
+POST http://localhost:7071/api/TopWords HTTP/1.1
+content-type: application/json
+
+{
+    "values": [
+        {
+            "recordId": "e1",
+            "data":
+            {
+                "text":  "Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal. "
+            }
+        },
+        {
+            "recordId": "e2",
+            "data": "This is an invalid input"
+        }
+    ]
+}
